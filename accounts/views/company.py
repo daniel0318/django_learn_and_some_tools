@@ -93,7 +93,6 @@ class CompanyRetrieveDestroyView(generics.RetrieveUpdateDestroyAPIView):
         return self.retrieve(request, *args, **kwargs)
     
     def put(self, request, *args, **kwargs):
-        # print(request.data, file=sys.stderr)
         return self.update(request, *args, **kwargs)
     
     def delete(self, request, *args, **kwargs):
@@ -106,9 +105,4 @@ class CompanyViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
 
-
-# TODO: 
-# 1. cache redis read write
-# 2. pre_search related_search, many2one, one2one, many2many
-# 3. prefix of nameing, Q function, annotate, 
 

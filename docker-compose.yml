@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - my-postgres
+      - redis
+    environment:
+      - REDIS_HOST=redis
+
+  my-postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: mypassword
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"

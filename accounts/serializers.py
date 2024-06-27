@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Company
+from .models import Company, Employee
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,3 +23,8 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = ['id', 'name', 'founded_date', 'market_value']
+
+class EmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employee
+        fields = ['id', 'name', 'position', 'company_id']

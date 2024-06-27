@@ -19,6 +19,8 @@ SET row_security = off;
 --
 -- Data for Name: companies; Type: TABLE DATA; Schema: public; Owner: postgres
 --
+
+DELETE FROM public.employee;
 DELETE FROM public.companies;
 
 INSERT INTO public.companies (id, name, founded_date, market_value) VALUES (1, 'Apple', '1980-05-17', 123456789012.34);
@@ -123,6 +125,17 @@ INSERT INTO public.companies (id, name, founded_date, market_value) VALUES (99, 
 INSERT INTO public.companies (id, name, founded_date, market_value) VALUES (100, 'Company 90', '1983-10-13', 901234567890.78);
 INSERT INTO public.companies (id, name, founded_date, market_value) VALUES (104, 'TestAdd3', '2000-05-17', 123456789000);
 
+
+INSERT INTO public.employee (name, position, company_id) VALUES ('John Doe', 'Software Engineer', 3);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Jane Smith', 'Project Manager', 1);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Alice Johnson', 'Data Scientist', 4);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Bob Brown', 'UX Designer', 2);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Charlie Davis', 'Marketing Specialist', 5);
+INSERT INTO public.employee (name, position, company_id) VALUES ('David Wilson', 'Product Manager', 1);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Eva Miller', 'Backend Developer', 3);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Frank Thomas', 'HR Manager', 2);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Grace Lee', 'QA Engineer', 4);
+INSERT INTO public.employee (name, position, company_id) VALUES ('Hannah Walker', 'Sales Executive', 5);
 
 --
 -- Name: companies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres

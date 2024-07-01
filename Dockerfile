@@ -4,9 +4,6 @@ FROM python:3.10-slim
 # Set the working directory in docker
 WORKDIR /app
 
-#RUN apt-get update && apt-get install -y \
-#    netcat \
-#    postgresql-client
 RUN apt-get update && apt-get install -y \
     postgresql-client
 
@@ -21,12 +18,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
 EXPOSE 8000
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 
 # Specify the command to run on container start
-# CMD ["python", "manage.py", "makemigrations"]
-# CMD ["python", "manage.py", "migrate"]
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

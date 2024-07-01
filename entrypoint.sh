@@ -7,11 +7,18 @@
 #sleep 1
 #echo "PostgreSQL started"
 
-python manage.py makemigrations 
-python manage.py migrate
+touch /app/touchFile
+
+echo "Starting entrypoint.sh script"
+sleep 10
 
 echo "my-postgres:5432:postgres:postgres:mypassword" > ~/.pgpass
 chmod 600 ~/.pgpass
+
+
+python manage.py makemigrations 
+python manage.py migrate
+
 
 psql -h my-postgres -U postgres -f /app/companies_insert.sql
 

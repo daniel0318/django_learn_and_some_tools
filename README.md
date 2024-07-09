@@ -10,10 +10,24 @@ And learn how to turn docker-compose into K8s
 4. docker-compose to integrate web server/DB/redis server
 5. use K8s(minikube) to replace docker-compose
 
-### Running 
+### Guide to launch services 
+
+clone and prepare venv environment
+```
+git clone git@github.com:daniel0318/django_learn_and_some_tools.git
+cd django_learn_and_some_tools
+python3 -m venv .venv
+source .venv/bin/activate
+```
+launch services (Dockerfile will do setup environment)
+```
+docker compose up -d --build
 ```
 
-```
+Now everything built up then you can request API in uri: localhost:8000/api/
+
+<img width="662" alt="image" src="https://github.com/daniel0318/django_learn_and_some_tools/assets/10074834/c09a3895-f20c-41f0-ab5e-2ca3e23f21f7">
+
+[postman collections] (https://github.com/daniel0318/django_learn_and_some_tools/blob/main/django_learn_and_some_tools.json)
 
 ### feature introduction
-  [views location](https://github.com/daniel0318/django_learn_and_some_tools/blob/main/accounts/views/company.py)

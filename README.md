@@ -27,17 +27,21 @@ launch services (Dockerfile will do setup environment)
 ```
 docker compose up -d --build
 ```
-Now everything built up then you can request API in uri: localhost:8000/api/
+- Now everything built up then you can request API in uri: localhost:8000/api/
+- so you can use Postman provided below to test
+
+[postman collections](https://github.com/daniel0318/django_learn_and_some_tools/blob/main/django_learn_and_some_tools.json)
+
+<img width="889" alt="image" src="https://github.com/daniel0318/django_learn_and_some_tools/assets/10074834/7d57b55c-9141-4cdf-bb6c-74c187490c69">
+
+
+
+
 
 Or you can build in K8s instead of docker-compose
 ```
 ./restart_resources.sh
 ```
-
-
-<img width="889" alt="image" src="https://github.com/daniel0318/django_learn_and_some_tools/assets/10074834/7d57b55c-9141-4cdf-bb6c-74c187490c69">
-
-[postman collections](https://github.com/daniel0318/django_learn_and_some_tools/blob/main/django_learn_and_some_tools.json)
 
 
 ## features introduction
